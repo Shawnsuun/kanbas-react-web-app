@@ -1,212 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Edit Assignment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
+
 <body>
-    <table style="width:100%">
-        <!-- Column 1 -->
-        <td style="width:15%; vertical-align:top;">
-            <ul>
-                <li><a href="../profile/index.html">Account</a></li>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="../home.html">Courses</a></li>
-                <li><a href="#">Calendar</a></li>
-                <li><a href="#">Inbox</a></li>
-                <li><a href="#">History</a></li>
-                <li><a href="#">Studio</a></li>
-                <li><a href="#">Commons</a></li>
-                <li><a href="#">Help</a></li>
-            </ul>
-        </td>
+    <!-- Sidebar Table (Column 1) -->
+    <table style="width:80px; float: left;">
+        <tr>
+            <td style="vertical-align:top;">
+                <ul class="sidebar">
+                    <li><img src="../../images/neu.jpg" alt="NEU Image" class="neu-image"></li>
+                    <li><a href="../profile/index.html"><i class="fas fa-user account-icon"></i> Account</a></li>
+                    <li><a href="../dashboard/index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="../home.html" class="active"><i class="fas fa-book-open"></i> Courses</a></li>
+                    <li><a href="#"><i class="fas fa-calendar-alt"></i> Calendar</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> Inbox</a></li>
+                    <li><a href="#"><i class="fas fa-history"></i> History</a></li>
+                    <li><a href="#"><i class="fas fa-tv"></i> Studio</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Commons</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
+                </ul>
+            </td>
+        </tr>
+    </table>
 
-        <!-- Column 2 -->
-        <td style="width:15%; vertical-align:top;">
-            <ul>
-                <li><a href="../home.html">Home</a></li>
-                <li><a href="#">Modules</a></li>
-                <li><a href="#">Piazza</a></li>
-                <li><a href="#">Zoom</a></li>
-                <li><a href="#">Meetings</a></li>
-                <li><a href="./index.html">Assignments</a></li>
-                <li><a href="#">Quizzes</a></li>
-                <li><a href="../grades.html">Grades</a></li>
-                <li><a href="#">People</a></li>
-                <li><a href="#">Panopto</a></li>
-                <li><a href="#">Video</a></li>
-                <li><a href="#">Discussions</a></li>
-                <li><a href="#">Announcements</a></li>
-                <li><a href="#">Pages</a></li>
-                <li><a href="#">Files</a></li>
-                <li><a href="#">Rubrics</a></li>
-                <li><a href="#">Outcomes</a></li>
-                <li><a href="#">Collaborations</a></li>
-                <li><a href="#">Syllabus</a></li>
-                <li><a href="../settings/courseDetails.html">Settings</a></li>
-            </ul>
-        </td>
+    <!-- Content Table -->
+    <table style="width:100% - 80px;">
+        <thead class="profile-header">
+            <tr>
+                <td colspan="3">
+                    <ol class="breadcrumb">
+                        <li><i class="fas fa-bars" style="color: red;"></i></li>
+                        <li class="breadcrumb-item">CS4550.12631.202410</li>
+                        <li class="breadcrumb-item active" aria-current="page">Home</li>
+                    </ol>
+                    <hr>
+                </td>
+            </tr>
+        </thead>
+        <tr>
+            <!-- Column 2 -->
+            <td class="side-menu" style="width:10%; vertical-align:top;">
+                <ul class="side-menu">
+                    <li><a href="./home.html">Home</a></li>
+                    <li><a href="../home.html">Modules</a></li>
+                    <li><a href="#">Piazza</a></li>
+                    <li><a href="#">Zoom</a></li>
+                    <li><a href="#">Meetings</a></li>
+                    <li><a href="../assignments/index.html" class="profile-active">Assignments</a></li>
+                    <li><a href="#">Quizzes</a></li>
+                    <li><a href="../grades.html">Grades</a></li>
+                    <li><a href="#">People</a></li>
+                    <li><a href="#">Panopto</a></li>
+                    <li><a href="#">Video</a></li>
+                    <li><a href="#">Discussions</a></li>
+                    <li><a href="#">Announcements</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li><a href="#">Files</a></li>
+                    <li><a href="#">Rubrics</a></li>
+                    <li><a href="#">Outcomes</a></li>
+                    <li><a href="#">Collaborations</a></li>
+                    <li><a href="#">Syllabus</a></li>
+                    <li><a href="./settings/courseDetails.html">Settings</a></li>
+                </ul>
+            </td>
 
-        <!-- Column 3 -->
-        <td>
-            <select name="assignment-edit-speed-grader" id="assignment-edit-speed-grader">
-                <option value="SPEED-GRADER" selected>SpeedGrader</option>
-            </select>
-            <hr>
-            <form action="../assignments/index.html">
-                <div id="assignment-edit-assignment-basic-info">
-                    <label for="assignment-edit-assignment-name">
-                        <h2>Assignment Name</h2>
-                    </label>
-                    <input type="text" name="assignment-name" id="assignment-edit-assignment-name"
-                        value="A1 - ENV + HTML">
-                    <br>
-                    <br>
-                    <textarea name="assignment-description" id="assignment-edit-assignment-description"
-                        cols="30" rows="10">This is the assignment description.</textarea>
-                </div>
-                <br>
-                <div id="assignment-edit-assignment-points">
-                    <label for="assignment-edit-assignment-points">Points</label>
-                    <br>
-                    <input type="number" name="assignment-points" id="assignment-edit-assignment-points"
-                        value="100" max="100" min="0" step=1 value="100">
-                </div>
-                <br>
-                <div id="assignment-edit-assignment-group">
-                    <label for="assignment-edit-assignment-group">Assignment Group</label>
-                    <br>
-                    <select name="assignment-group" id="assignment-edit-assignment-group">
-                        <option value="ASSIGNMENTS" selected>Assignments</option>
-                        <option value="EXAMS">Exams</option>
-                        <option value="PROJECT">Project</option>
-                    </select>
-                </div>
-                <br>
-                <div id="assignment-edit-assignment-grade-display">
-                    <label for="assignment-edit-assignment-grade-display-as">Display Grade as</label>
-                    <br>
-                    <select name="assignment-grade-display-as" id="assignment-edit-assignment-grade-display-as">
-                        <option value="PERCENTAGE" selected>Percentage</option>
-                        <option value="VALUE">Grade Value</option>
-                    </select>
-                </div>
-                <br>
-                <div id="assignment-edit-submission-type">
-                    <label for="assignment-edit-assignment-submission-type-dropdown">Submission type</label>
-                    <br>
-                    <select name="assignment-submission-type"
-                        id="assignment-edit-assignment-submission-type-dropdown">
-                        <option value="ONLINE" selected>Online</option>
-                        <option value="IN-PERSON">In Person</option>
-                    </select>
-                    <br>
-                    <br>
-                    <div id="assignment-edit-submission-online-options">
-                        <label for="">Online Entry Options</label>
-                        <br>
-                        <input type="checkbox" name="check-online-entry" id="checkbox-text-entry">
-                        <label for="checkbox-text-entry">Text Entry</label>
-                        <br>
-                        <input type="checkbox" name="check-online-entry" id="checkbox-website-url">
-                        <label for="checkbox-website-url">Website URL</label>
-                        <br>
-                        <input type="checkbox" name="check-online-entry" id="checkbox-media-recordings">
-                        <label for="checkbox-media-recordings">Media Recordings</label>
-                        <br>
-                        <input type="checkbox" name="check-online-entry" id="checkbox-student-annotation">
-                        <label for="checkbox-student-annotation">Student Annotation</label>
-                        <br>
-                        <input type="checkbox" name="check-online-entry" id="checkbox-file-uploads">
-                        <label for="checkbox-file-uploads">File Uploads</label>
+            <!-- Column 3 -->
+            <td>
+                <select name="assignment-edit-speed-grader" id="assignment-edit-speed-grader">
+                    <option value="SPEED-GRADER" selected>SpeedGrader</option>
+                </select>
+                <hr>
+                <form action="../assignments/index.html">
+                    <!-- Assignment Basic Info -->
+                    <div class="form-group mb-3">
+                        <label for="assignment-edit-assignment-name">
+                            <h2>Assignment Name</h2>
+                        </label>
+                        <input type="text" name="assignment-name" id="assignment-edit-assignment-name"
+                            value="A1 - ENV + HTML" class="form-control">
+                        <textarea name="assignment-description" id="assignment-edit-assignment-description" cols="30"
+                            rows="10" class="form-control mt-3">This is the assignment description.</textarea>
                     </div>
-                </div>
-                <br>
-                <div id="assignment-edit-submission-attempts">
-                    <label for="assignment-edit-submission-attempts-dropdown">
-                        Submission Attempts
-                    </label>
-                    <br>
-                    <select name="submision-attempts" id="assignment-edit-submission-attempts-dropdown">
-                        <option value="UNLIMITED" selected>Unlimited</option>
-                        <option value="ONE">1</option>
-                        <option value="TWO">2</option>
-                        <option value="THREE">3</option>
-                        <option value="FOUR">4</option>
-                        <option value="FIVE">5</option>
-                    </select>
-                </div>
-                <br>
-                <div id="assignment-edit-plagiarism">
-                    <label for="assignment-edit-plagiarism-dropdown">
-                        Plagiarism Review
-                    </label>
-                    <br>
-                    <select name="plagiarism" id="assignment-edit-plagiarism-dropdown">
-                        <option value="NONE" selected>None</option>
-                        <option value="STRICT">Strict</option>
-                        <option value="RELAXED">Relaxed</option>
-                    </select>
-                </div>
-                <br>
-                <div id="assignment-edit-group-assignment">
-                    <label for="">
-                        Group Assignment
-                    </label>
-                    <br>
-                    <input type="checkbox" name="check-group" id="checkbox-group">
-                    <label for="checkbox-group">This is a group assignment</label>
-                </div>
-                <br>
-                <div id="assignment-edit-peer-reviews">
-                    <label for="">
-                        Peer Reviews
-                    </label>
-                    <br>
-                    <input type="checkbox" name="check-peer-reviews" id="checkbox-peer-reviews">
-                    <label for="checkbox-peer-reviews">Require Peer Reviews</label>
-                </div>
-                <br>
-                <div id="assignment-edit-assign-to">
-                    <label for="">Assign</label>
-                    <br>
-                    <label for="assignment-eidt-assign-to-input">Assign to</label>
-                    <br>
-                    <input type="text" name="assign-to" id="assignment-edit-assign-to-input" value="Everyone">
-                </div>
-                <br>
-                <div id="assignment-edit-dates">
-                    <label for="assignment-edit-assignment-due">
-                        Due
-                    </label>
-                    <br>
-                    <input type="date" name="due" id="assignment-edit-assignment-due-input" value="2023-01-01">
-                    <br>
-                    <br>
-                    <label for="assignment-edit-assignment-available-from">
-                        Available from
-                    </label>
-                    <br>
-                    <input type="date" name="available-from" id="assignment-edit-assignment-available-from"
-                        value="2023-01-01">
-                    <br>
-                    <br>
-                    <label for="assignment-edit-assignment-until">
-                        Until
-                    </label>
-                    <br>
-                    <input type="date" name="until" id="assignment-edit-assignment-until" value="2023-01-01">
-                </div>
-                <br>
-                <div id="assignment-edit-submision-buttons">
-                    <button>Cancel</button>
-                    <button>Save</button>
-                </div>
-            </form>
 
-        </td>
+                    <!-- Points -->
+                    <div class="form-group mb-3">
+                        <label for="assignment-edit-assignment-points">Points</label>
+                        <input type="number" name="assignment-points" id="assignment-edit-assignment-points" value="100"
+                            max="100" min="0" step=1 class="form-control">
+                    </div>
+                    <br>
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <label for="assignment-edit-assignment-group" class="form-label">Assignment Group</label>
+                        </div>
+                        <div class="col-md-9">
+                            <select name="assignment-group" id="assignment-edit-assignment-group" class="form-control">
+                                <option value="ASSIGNMENTS" selected>Assignments</option>
+                                <option value="EXAMS">Exams</option>
+                                <option value="PROJECT">Project</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <label for="assignment-edit-assignment-grade-display-as" class="form-label">Display Grade as</label>
+                        </div>
+                        <div class="col-md-9">
+                            <select name="assignment-grade-display-as" id="assignment-edit-assignment-grade-display-as" class="form-control">
+                                <option value="PERCENTAGE" selected>Percentage</option>
+                                <option value="VALUE">Grade Value</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <label for="assignment-edit-assignment-submission-type-dropdown" class="form-label">Submission type</label>
+                        </div>
+                        <div class="col-md-9">
+                            <select name="assignment-submission-type" id="assignment-edit-assignment-submission-type-dropdown" class="form-control mb-3">
+                                <option value="ONLINE" selected>Online</option>
+                                <option value="IN-PERSON">In Person</option>
+                            </select>
+                    
+                            <div id="assignment-edit-submission-online-options" class="mt-2">
+                                <label class="form-label">Online Entry Options</label>
+                    
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" name="check-online-entry" id="checkbox-text-entry">
+                                    <label class="form-check-label" for="checkbox-text-entry">Text Entry</label>
+                                </div>
+                    
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" name="check-online-entry" id="checkbox-website-url">
+                                    <label class="form-check-label" for="checkbox-website-url">Website URL</label>
+                                </div>
+                    
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" name="check-online-entry" id="checkbox-media-recordings">
+                                    <label class="form-check-label" for="checkbox-media-recordings">Media Recordings</label>
+                                </div>
+                    
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" name="check-online-entry" id="checkbox-student-annotation">
+                                    <label class="form-check-label" for="checkbox-student-annotation">Student Annotation</label>
+                                </div>
+                    
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" name="check-online-entry" id="checkbox-file-uploads">
+                                    <label class="form-check-label" for="checkbox-file-uploads">File Uploads</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <label for="assignment-edit-submission-attempts-dropdown" class="form-label">
+                                Submission Attempts
+                            </label>
+                        </div>
+                        <div class="col-md-9">
+                            <select name="submision-attempts" id="assignment-edit-submission-attempts-dropdown" class="form-control">
+                                <option value="UNLIMITED" selected>Unlimited</option>
+                                <option value="ONE">1</option>
+                                <option value="TWO">2</option>
+                                <option value="THREE">3</option>
+                                <option value="FOUR">4</option>
+                                <option value="FIVE">5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <label for="assignment-edit-plagiarism-dropdown" class="form-label">
+                                Plagiarism Review
+                            </label>
+                        </div>
+                        <div class="col-md-9">
+                            <select name="plagiarism" id="assignment-edit-plagiarism-dropdown" class="form-control">
+                                <option value="NONE" selected>None</option>
+                                <option value="STRICT">Strict</option>
+                                <option value="RELAXED">Relaxed</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <label>Group Assignment</label>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" name="check-group" id="checkbox-group">
+                                <label class="form-check-label" for="checkbox-group">This is a group assignment</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <label>Peer Reviews</label>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" name="check-peer-reviews" id="checkbox-peer-reviews">
+                                <label class="form-check-label" for="checkbox-peer-reviews">Require Peer Reviews</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <label for="assignment-edit-assign-to-input">Assign</label>
+                        </div>
+                        <div class="col-md-9">
+                            <label for="assignment-edit-assign-to-input" class="visually-hidden">Assign to</label>
+                            <input type="text" name="assign-to" id="assignment-edit-assign-to-input" value="Everyone" class="form-control">
+                        </div>
+                    </div>
+                    <br>
+                    <div id="assignment-edit-dates">
+    
+                        <div class="row mb-3">
+                            <div class="col-md-3">
+                                <label for="assignment-edit-assignment-due">Due</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="date" name="due" id="assignment-edit-assignment-due-input" value="2023-01-01" class="form-control">
+                            </div>
+                        </div>
+                    
+                        <div class="row mb-3">
+                            <div class="col-md-3">
+                                <label for="assignment-edit-assignment-available-from">Available from</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="date" name="available-from" id="assignment-edit-assignment-available-from" value="2023-01-01" class="form-control">
+                            </div>
+                        </div>
+                    
+                        <div class="row mb-3">
+                            <div class="col-md-3">
+                                <label for="assignment-edit-assignment-until">Until</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="date" name="until" id="assignment-edit-assignment-until" value="2023-01-01" class="form-control">
+                            </div>
+                        </div>
+                        
+                    </div>
 
+                    
+                    
+                    <br>
+                    <!-- Save and Cancel Buttons -->
+                    <div class="form-group float-end mt-4">
+                        <button class="btn btn-secondary mr-2">Cancel</button>
+                        <button class="btn btn-success">Save</button>
+                    </div>
+                </form>
+
+            </td>
     </table>
 </body>
+
 </html>

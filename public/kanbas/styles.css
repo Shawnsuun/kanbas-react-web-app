@@ -1,0 +1,409 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+table {
+    padding: 0
+}
+
+.sidebar {
+    position: absolute;
+    /* Added this to position the sidebar */
+    top: 0;
+    /* Align to top */
+    left: 0;
+    /* Align to left */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    width: 80px;
+    height: 100%;
+    margin-right: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    background-color: black;
+    width: 80px;
+    /* Adjust width between 75px and 85px as per preference */
+}
+
+.sidebar img {
+    width: 80px;
+    height: 80px;
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    text-align: center;
+    font-size: 15px;
+    /* Adjust this value for desired icon size */
+    margin: 5px 0;
+    /* Adjust margin between 5px and 10px as per preference */
+}
+
+.sidebar li i {
+    display: block;
+    text-align: center;
+    /* To center the icons */
+}
+
+.sidebar .account-icon {
+    color: white;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 6px 0;
+    /* Adjust padding between 5px and 10px as per preference */
+    text-decoration: none;
+}
+
+.sidebar .fas {
+    color: red;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    /* Adjust between 5px and 10px as per preference */
+}
+
+.sidebar a.active {
+    background-color: white;
+    color: red;
+    border-left: 4px solid black;
+}
+
+.sidebar a:hover {
+    background-color: #575757;
+    color: white;
+}
+
+.side-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 195px;
+    /* Set the width of the sidebar to be between 190 and 200 pixels*/
+}
+
+.side-menu li {
+    padding: 10px 0;
+    /* Adjust spacing between links to be between 15 and 20 pixels*/
+}
+
+.side-menu a {
+    display: block;
+    color: red;
+    padding: 0 0 0 10px;
+    /* Add padding to the left to maintain space between the black border and link's text to be between 8 and 10 pixels*/
+    text-decoration: none;
+    border-left: 4px solid transparent;
+    /* Add transparent border to maintain a consistent spacing for all links*/
+    white-space: normal;
+}
+
+.side-menu a.profile-active {
+    color: black;
+    border-left: 4px solid black;
+    margin-left: 4px;
+}
+
+.side-menu a:not(.profile-active):hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.profile-basic-info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 10px;
+}
+
+.profile-icon {
+    font-size: 60px;
+    margin-right: 15px;
+}
+
+.profile-input,
+.profile-textarea {
+    width: 75%;
+    padding: 5px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.profile-textarea {
+    height: 50px;
+}
+
+.profile-section h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+
+.profile-section {
+    margin-bottom: 10px;
+}
+
+.profile-table th {
+    text-align: left;
+}
+
+.profile-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn-link-add {
+    margin-right: auto;
+    margin: 10px;
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-danger {
+    background-color: red;
+    border-color: red;
+    margin-left: 5px;
+}
+
+.btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+
+/* Bootstrap Collapse modifications */
+.list-group-item-secondary {
+    background-color: #f7f7f7;
+    /* Light Gray background for module title */
+    cursor: pointer;
+    /* Make it look clickable */
+    margin-bottom: 10px;
+    /* Spacing between modules */
+}
+
+.list-group-item-secondary:hover {
+    background-color: #e6e6e6;
+    /* Slightly darker gray on hover */
+}
+
+.list-group .list-group-item {
+    border: none;
+    /* Remove default borders */
+    padding-left: 25px;
+    /* Indentation for sub-items */
+}
+
+.list-group .list-group-item ul {
+    margin-top: 5px;
+    /* Spacing between sub-items */
+}
+
+/* Hyperlink modifications */
+.list-group a {
+    color: red;
+    text-decoration: none;
+    /* Removing underline */
+}
+
+.list-group a:hover {
+    text-decoration: underline;
+    /* Underline on hover for clarity */
+}
+
+/* Button modifications */
+button {
+    background-color: #6c757d;
+    /* Default button background */
+    border-color: #6c757d;
+    /* Default button border */
+    color: #fff;
+    /* Default button text color */
+    margin-right: 10px;
+    /* Spacing between buttons */
+}
+
+button.btn-link {
+    background-color: transparent;
+    /* Transparent background for link-style button */
+    color: #6c757d;
+    /* Text color for link-style button */
+}
+
+.resource-list {
+    font-size: 16px;
+    padding-left: 0;
+}
+
+.resource-list>li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.resource-list>li:last-child {
+    border-bottom: none;
+}
+
+.resource-list i.fas {
+    margin-right: 8px;
+    color: #8d8d8d;
+}
+
+.resource-list ul {
+    padding-left: 20px;
+}
+
+.resource-list ul li {
+    padding: 4px 0;
+}
+
+.resource-list ul li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.resource-list ul li a:hover {
+    text-decoration: underline;
+}
+
+.resource-list ul li a i.fas.fa-external-link-alt {
+    margin-left: 4px;
+    font-size: 0.9em;
+}
+
+.float-end {
+    float: right;
+}
+
+
+
+/* Content styling */
+.col-md-10 {
+    margin-left: 80px; /* Adjusting for the width of the sidebar */
+}
+
+h2, h3 {
+    margin: 20px 0; /* Giving the titles some margin */
+}
+
+hr {
+    margin-bottom: 20px; /* Space after the horizontal rule */
+}
+
+/* Cards styling to meet the requirements */
+card m-4 {
+    width: 260px; /* Set to 260, but can adjust between 250-270 as per requirement */
+    margin: 20px; /* This gives 40px space between cards as they stack up against each other */
+}
+
+.card-img-top {
+    height: 150px;
+}
+
+/* Mobile responsiveness using Bootstrap’s grid system */
+@media (max-width: 992px) {
+    .card {
+        flex: 0 0 calc(33.33333% - 40px); /* Three cards in a row minus the margin */
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 0 0 calc(50% - 40px); /* Two cards in a row minus the margin */
+    }
+}
+
+
+
+
+
+/* Styling for breadcrumb */
+.breadcrumb {
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-radius: 0;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    color: black;
+}
+
+.breadcrumb-item.active {
+    color: black;
+}
+
+/* Implementing hyperlink requirements */
+a {
+    color: red;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Checkmarks styling */
+.list-group-item .fas.fa-check {
+    color: green;
+}
+
+/* Implementing whitespace before "Introduction to the course" */
+.nested-list-item:first-child {
+    margin-top: 15px;
+}
+
+.actions {
+    margin-bottom: 15px;
+}
+
+.actions button, .actions select {
+    float: right;
+    margin-left: 10px;
+}
+
+.actions .btn {
+    background-color: #6c757d;
+    color: white;
+}
+
+.actions .btn-danger {
+    background-color: red;
+}
+
+/* Custom styles*/
+.custom-list-group .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.custom-list-group .list-group-item > div:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.custom-list-group i.fa-check {
+    color: green;
+}
+
+.custom-list-group i.fa-ellipsis-v {
+    margin-left: 1em;
+}

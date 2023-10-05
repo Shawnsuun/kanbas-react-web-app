@@ -1,154 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Grades</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <table style="width:100%">
-        <!-- Column 1 -->
-        <td style="width:15%; vertical-align:top;">
-            <ul>
-                <li><a href="./profile/index.html">Account</a></li>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="./home.html">Courses</a></li>
-                <li><a href="#">Calendar</a></li>
-                <li><a href="#">Inbox</a></li>
-                <li><a href="#">History</a></li>
-                <li><a href="#">Studio</a></li>
-                <li><a href="#">Commons</a></li>
-                <li><a href="#">Help</a></li>
-            </ul>
-        </td>
-
-        <!-- Column 2 -->
-        <td style="width:15%; vertical-align:top;">
-            <ul>
-                <li><a href="./home.html">Home</a></li>
-                <li><a href="#">Modules</a></li>
-                <li><a href="#">Piazza</a></li>
-                <li><a href="#">Zoom</a></li>
-                <li><a href="#">Meetings</a></li>
-                <li><a href="./assignments/index.html">Assignments</a></li>
-                <li><a href="#">Quizzes</a></li>
-                <li><a href="./grades.html">Grades</a></li>
-                <li><a href="#">People</a></li>
-                <li><a href="#">Panopto</a></li>
-                <li><a href="#">Video</a></li>
-                <li><a href="#">Discussions</a></li>
-                <li><a href="#">Announcements</a></li>
-                <li><a href="#">Pages</a></li>
-                <li><a href="#">Files</a></li>
-                <li><a href="#">Rubrics</a></li>
-                <li><a href="#">Outcomes</a></li>
-                <li><a href="#">Collaborations</a></li>
-                <li><a href="#">Syllabus</a></li>
-                <li><a href="./settings/courseDetails.html">Settings</a></li>
-            </ul>
-        </td>
-
-        <!-- Column 3 -->
-        <td style="width:50%; vertical-align:top;">
-            <div>
-                <button>Collapse All</button>
-                <button>View Progress</button>
-                <select>
-                    <option value="publish-all" selected>Publish All</option>
-                    <option value="publish-current">Publish Current</option>
-                </select>
-                <button>Module</button>
-            </div>
-
-            <div>
-                <ul>
-                    <li>
-                        Week 0 - INTRO
-                        <ul>
-                            <li>
-                                LEARNING OBJECTIVES
-                                <ul>
-                                    <li>Introduction to the course</li>
-                                    <li>Learn what is Web Development</li>
-                                    <li>Creating a development environment</li>
-                                    <li>Creating a Web Application</li>
-                                    <li>Getting started with the 1st assignment</li>
-                                </ul>
-                            </li>
-                            <li>
-                                READING
-                                <ul>
-                                    <li>Full Stack Developer - Chapter 1 - Introduction</li>
-                                    <li>Full Stack Developer - Chapter 2 - Creating User Interfaces With HTML
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                SLIDES
-                                <ul>
-                                    <li><a href="#">Introduction to Web Development Links to an external
-                                            site.</a></li>
-                                    <li><a href="#">Creating an HTTP server with Node.js Links to an external
-                                            site.</a></li>
-                                    <li><a href="#">Creating a React Application Links to an external site.</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        Week 1 - HTML
-                        <ul>
-                            <li>
-                                LEARNING OBJECTIVES
-                                <ul>
-                                    <li>Learn how to create user interfaces with HTML</li>
-                                    <li>Keep working on assignment 1</li>
-                                    <li>Deploy the assignment to Netlify</li>
-                                </ul>
-                            </li>
-                            <li>
-                                READING
-                                <ul>
-                                    <li>Full Stack Developer - Chapter 1 - Introduction</li>
-                                    <li>Full Stack Developer - Chapter 2 - Creating User Interfaces With HTML
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+    <!-- Sidebar Table (Column 1) -->
+    <table style="width:80px; float: left;">
+        <tr>
+            <td style="vertical-align:top;">
+                <ul class="sidebar">
+                    <li><img src="../images/neu.jpg" alt="NEU Image" class="neu-image"></li>
+                    <li><a href="./profile/index.html"><i class="fas fa-user account-icon"></i> Account</a></li>
+                    <li><a href="./dashboard/index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="./home.html" class="active"><i class="fas fa-book-open"></i> Courses</a></li>
+                    <li><a href="#"><i class="fas fa-calendar-alt"></i> Calendar</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> Inbox</a></li>
+                    <li><a href="#"><i class="fas fa-history"></i> History</a></li>
+                    <li><a href="#"><i class="fas fa-tv"></i> Studio</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Commons</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
                 </ul>
-            </div>
-        </td>
-
-        <!-- Column 4 -->
-        <td style="width:20%; vertical-align:top;">
-            <div>
-                <h1>Course Status</h1>
-                <div>
-                    <button>Unpublish</button>
-                    <button>Published</button>
-                </div>
-                <ul>
-                    <li><a href="#">Import Existing Content</a></li>
-                    <li><a href="#">Import From Commons</a></li>
-                    <li><a href="#">Choose Home Page</a></li>
-                    <li><a href="#">View Course Stream</a></li>
-                    <li><a href="#">New Announcement</a></li>
-                    <li><a href="#">New Analytics</a></li>
-                    <li><a href="#">View Course Notifications</a></li>
-                </ul>
-            </div>
-            <div>
-                <h1>Coming up</h1>
-                <a href="#">View Calendar</a>
-                <ul>
-                    <li><a href="#">Lecture CS4550.12631.202410 Sep 7 at 11:45am</a></li>
-                    <li><a href="#">Lecture CS4550.12631.202410 Sep 11 at 11:45am</a></li>
-                    <li><a href="#">Lecture CS5610 06 SP23 Lecture Sep 11 at 6pm</a></li>
-                </ul>
-            </div>
-        </td>
+            </td>
+        </tr>
     </table>
+
+    <!-- Content Table -->
+    <table style="width:100% - 80px;">
+        <thead class="profile-header">
+            <tr>
+                <td colspan="3">
+                    <ol class="breadcrumb">
+                        <li><i class="fas fa-bars" style="color: red;"></i></li>
+                        <li class="breadcrumb-item">CS4550.12631.202410</li>
+                        <li class="breadcrumb-item active" aria-current="page">Home</li>
+                    </ol>
+                    <div class="actions">
+                        <button class="btn btn-secondary">Collapse All</button>
+                        <button class="btn btn-secondary">View Progress</button>
+                        <select>
+                            <option value="publish-all" selected>Publish All</option>
+                            <option value="publish-current">Publish Current</option>
+                        </select>
+                        <button>Module</button>
+                    </div>
+                    <hr>
+                </td>
+            </tr>
+        </thead>
+        <tr>
+            <!-- Column 2 -->
+            <td class="side-menu" style="width:10%; vertical-align:top;">
+                <ul class="side-menu">
+                    <li><a href="./home.html">Home</a></li>
+                    <li><a href="#" class="profile-active">Modules</a></li>
+                    <li><a href="#">Piazza</a></li>
+                    <li><a href="#">Zoom</a></li>
+                    <li><a href="#">Meetings</a></li>
+                    <li><a href="./assignments/index.html">Assignments</a></li>
+                    <li><a href="#">Quizzes</a></li>
+                    <li><a href="./grades.html">Grades</a></li>
+                    <li><a href="#">People</a></li>
+                    <li><a href="#">Panopto</a></li>
+                    <li><a href="#">Video</a></li>
+                    <li><a href="#">Discussions</a></li>
+                    <li><a href="#">Announcements</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li><a href="#">Files</a></li>
+                    <li><a href="#">Rubrics</a></li>
+                    <li><a href="#">Outcomes</a></li>
+                    <li><a href="#">Collaborations</a></li>
+                    <li><a href="#">Syllabus</a></li>
+                    <li><a href="./settings/courseDetails.html">Settings</a></li>
+                </ul>
+            </td>
+
+            <!-- Column 3 -->
+            <td style="width:40%; vertical-align:top;">
+                <div class="accordion" id="moduleAccordion">
+                    <!-- Week 0 - INTRO -->
+                    <div class="card">
+                        <div class="card-header list-group-item-secondary">
+                            <a data-toggle="collapse" href="#collapseWeek0" aria-expanded="true">
+                                Week 0 - INTRO <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                        </div>
+                        <div id="collapseWeek0" class="collapse show">
+                            <div class="card-body">
+
+                                <!-- LEARNING OBJECTIVES -->
+                                <div class="card">
+                                    <div class="card-header list-group-item-secondary">
+                                        <a data-toggle="collapse" href="#learningObjectives0" aria-expanded="true">
+                                            LEARNING OBJECTIVES <i class="fas fa-plus"></i>
+                                        </a>
+                                    </div>
+                                    <div id="learningObjectives0" class="collapse show">
+                                        <ul class="list-unstyled">
+                                            <li class="nested-list-item">
+                                                <div class="card">
+                                                    <div class="card-body">Introduction to the course <i
+                                                        class="fas fa-check" style="color: green;"></i></div>
+                                                </div>
+                                            </li>
+                                            <li class="nested-list-item">
+                                                <div class="card">
+                                                    <div class="card-body">Learn what is Web Development <i
+                                                        class="fas fa-check" style="color: green;"></i></div>
+                                                </div>
+                                            </li>
+                                            <li class="nested-list-item">
+                                                <div class="card">
+                                                    <div class="card-body">Creating a development environment <i
+                                                        class="fas fa-check" style="color: green;"></i></div>
+                                                </div>
+                                            </li>
+                                            <li class="nested-list-item">
+                                                <div class="card">
+                                                    <div class="card-body">Creating a Web Application</div>
+                                                </div>
+                                            </li>
+                                            <li class="nested-list-item">
+                                                <div class="card">
+                                                    <div class="card-body">Getting started with the 1st assignment</div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- READING -->
+                                <div class="card">
+                                    <div class="card-header list-group-item-secondary">
+                                        <a data-toggle="collapse" href="#readingList0" aria-expanded="true">
+                                            READING <i class="fas fa-ellipsis-v"></i>
+                                        </a>
+                                    </div>
+                                    <div id="readingList0" class="collapse show">
+                                        <ul class="list-unstyled">
+                                            <li class="nested-list-item">
+                                                <div class="card">
+                                                    <div class="card-body">Full Stack Developer - Chapter 1 -
+                                                        Introduction</div>
+                                                </div>
+                                            </li>
+                                            <li class="nested-list-item">
+                                                <div class="card">
+                                                    <div class="card-body">Full Stack Developer - Chapter 2 - Creating
+                                                        User Interfaces With HTML</div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- SLIDES -->
+                                <div class="card">
+                                    <div class="card-header list-group-item-secondary">
+                                        <a data-toggle="collapse" href="#slidesList0" aria-expanded="true">
+                                            SLIDES <i class="fas fa-ellipsis-v"></i>
+                                        </a>
+                                    </div>
+                                    <div id="slidesList0" class="collapse show">
+                                        <ul class="list-unstyled">
+                                            <li class="nested-list-item">
+                                                <div class="card">
+                                                    <div class="card-body"><a href="#">Introduction to Web
+                                                            Development</a></div>
+                                                </div>
+                                            </li>
+                                            <li class="nested-list-item">
+                                                <div class="card">
+                                                    <div class="card-body"><a href="#">Creating an HTTP server with
+                                                            Node.js</a></div>
+                                                </div>
+                                            </li>
+                                            <li class="nested-list-item">
+                                                <div class="card">
+                                                    <div class="card-body"><a href="#">Creating a React Application</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Week 1 - HTML -->
+                    <div class="card">
+                        <div class="card-header list-group-item-secondary">
+                            <a data-toggle="collapse" href="#collapseWeek1" aria-expanded="true">
+                                Week 1 - HTML <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                        </div>
+                        <div id="collapseWeek1" class="collapse show">
+                            <div class="card-body">
+
+                                <!-- LEARNING OBJECTIVES -->
+                                <div class="card">
+                                    <div class="card-header list-group-item-secondary">
+                                        <a data-toggle="collapse" href="#learningObjectives1" aria-expanded="true">
+                                            LEARNING OBJECTIVES <i class="fas fa-plus"></i>
+                                        </a>
+                                    </div>
+                                    <div id="learningObjectives1" class="collapse show">
+                                        <ul class="list-unstyled">
+                                            <li class="nested-list-item">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        Learn how to create user interfaces with HTML <i
+                                                            class="fas fa-check" style="color: green;"></i>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="nested-list-item">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        Keep working on assignment 1
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="nested-list-item">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        Deploy the assignment to Netlify
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- READING -->
+                                <div class="card">
+                                    <div class="card-header list-group-item-secondary">
+                                        <a data-toggle="collapse" href="#readingList1" aria-expanded="true">
+                                            READING <i class="fas fa-ellipsis-v"></i>
+                                        </a>
+                                    </div>
+                                    <div id="readingList1" class="collapse show">
+                                        <ul class="list-unstyled">
+                                            <li class="nested-list-item">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        Full Stack Developer - Chapter 1 - Introduction <i
+                                                            class="fas fa-check" style="color: green;"></i>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="nested-list-item">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        Full Stack Developer - Chapter 2 - Creating User Interfaces With
+                                                        HTML
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 4 -->
+            <td style="width:15%; vertical-align:top;">
+                <div class="side-section">
+                    <h1>Course Status</h1>
+                    <div>
+                        <button class="btn btn-danger">Unpublish</button>
+                        <button class="btn btn-secondary">Published</button>
+                    </div>
+                    <ul>
+                        <li class="card-style"><a href="#">Import Existing Content</a></li>
+                        <li class="card-style"><a href="#">Import From Commons</a></li>
+                        <li class="card-style"><a href="#">Choose Home Page</a></li>
+                        <li class="card-style"><a href="#">View Course Stream</a></li>
+                        <li class="card-style"><a href="#">New Announcement</a></li>
+                        <li class="card-style"><a href="#">New Analytics</a></li>
+                        <li class="card-style"><a href="#">View Course Notifications</a></li>
+                    </ul>
+                    <h1>Coming up</h1>
+                    <div>
+                        <a href="#">View Calendar</a>
+                    </div>
+                    <ul>
+                        <li class="card-style"><a href="#">Lecture CS4550.12631.202410 Sep 7 at 11:45am</a></li>
+                        <li class="card-style"><a href="#">Lecture CS4550.12631.202410 Sep 11 at 11:45am</a></li>
+                        <li class="card-style"><a href="#">Lecture CS5610 06 SP23 Lecture Sep 11 at 6pm</a></li>
+                    </ul>
+                </div>
+            </td>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
+
 </html>

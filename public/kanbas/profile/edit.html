@@ -1,115 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
+
 <body>
-    <table style="width:100%">
-        <!-- Column 1 -->
-        <td style="width:15%; vertical-align:top;">
-            <ul>
-                <li><a href="./index.html">Account</a></li>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="../home.html">Courses</a></li>
-                <li><a href="#">Calendar</a></li>
-                <li><a href="#">Inbox</a></li>
-                <li><a href="#">History</a></li>
-                <li><a href="#">Studio</a></li>
-                <li><a href="#">Commons</a></li>
-                <li><a href="#">Help</a></li>
-            </ul>
-        </td>
+    <!-- Sidebar Table (Column 1) -->
+    <table style="width:80px; float: left;">
+        <tr>
+            <td style="vertical-align:top;">
+                <ul class="sidebar">
+                    <li><img src="../../images/neu.jpg" alt="NEU Image" class="neu-image"></li>
+                    <li><a href="./index.html" class="active"><i class="fas fa-user account-icon"></i> Account</a></li>
+                    <li><a href="../dashboard/index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="../home.html"><i class="fas fa-book-open"></i> Courses</a></li>
+                    <li><a href="#"><i class="fas fa-calendar-alt"></i> Calendar</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> Inbox</a></li>
+                    <li><a href="#"><i class="fas fa-history"></i> History</a></li>
+                    <li><a href="#"><i class="fas fa-tv"></i> Studio</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Commons</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
+                </ul>
+            </td>
+        </tr>
+    </table>
 
-        <!-- Column 2 -->
-        <td style="width:15%; vertical-align:top;">
-            <ul>
-                <li><a href="#">Notifications</a></li>
-                <li><a href="./index.html">Profile</a></li>
-                <li><a href="#">Files</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">ePortfolios</a></li>
-                <li><a href="#">Shared Content</a></li>
-                <li><a href="#">The Hub</a></li>
-                <li><a href="#">Qwickly Course Tools</a></li>
-                <li><a href="#">Global Announcements</a></li>
-            </ul>
-        </td>
+    <!-- Content Table (Columns 2 and 3) -->
+    <table style="width:85% - 80px;">
+        <!-- Common Header for Column 2 and Column 3 -->
+        <thead class="profile-header">
+            <tr>
+                <td colspan="2">
+                    <div id="profile-header" style="padding: 10px;">
+                        <i class="fas fa-bars" style="color: red;"></i> Xiaowen Sun's Profile
+                    </div>
+                    <hr>
+                </td>
+            </tr>
+        </thead>
+        <tr>
+            <!-- Column 2 -->
+            <td style="width:15%; vertical-align:top;">
+                <ul class="side-menu">
+                    <li><a href="#">Notifications</a></li>
+                    <li><a class="profile-active" href="./index.html">Profile</a></li>
+                    <li><a href="#">Files</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">ePortfolios</a></li>
+                    <li><a href="#">Shared Content</a></li>
+                    <li><a href="#">The Hub</a></li>
+                    <li><a href="#">Qwickly Course Tools</a></li>
+                    <li><a href="#">Global Announcements</a></li>
+                </ul>
+            </td>
+            <!-- Column 3 -->
+            <td style="width:60%; vertical-align:top;">
+                <form action="./index.html" id="profile-edit-form">
+                    <div class="profile-basic-info">
+                        <i class="fas fa-user profile-icon"></i>
+                        <label for="profile-edit-name">Name:* </label>
+                        <input type="text" class="form-control profile-input" name="name" id="profile-edit-name" value="Xiaowen Sun">
+                        <label for="profile-edit-pronouns">Pronouns: </label>
+                        <select class="profile-input" name="pronouns" id="profile-edit-pronouns">
+                            <option value="NONE" selected>None</option>
+                            <option value="HE-HIM-HIS">He/Him/His</option>
+                            <option value="SHE-HER-HERS">She/Her/Hers</option>
+                            <option value="THEY-THEM-THEIRS">They/Them/Theirs</option>
+                        </select>
 
-        <!-- Column 3 -->
-        <td style="width:70%;" >
-            <form action="./index.html" id="profile-edit-form">
-                <div>
-                    <h1>Xiaowen Sun</h1>
-                    <label for="profile-edit-name">Name:* </label>
-                    <input type="text" name="name" id="profile-edit-name" value="Xiaowen Sun">
-                    <label for="profile-edit-pronouns">Pronouns: </label>
-                    <select name="pronouns" id="profile-edit-pronouns">
-                        <option value="NONE" selected>None</option>
-                        <option value="HE-HIM-HIS">He/Him/His</option>
-                        <option value="SHE-HER-HERS">She/Her/Hers</option>
-                        <option value="THEY-THEM-THEIRS">They/Them/Theirs</option>
-                    </select>
-                    <br>
-                    <label for="profile-edit-title">Title: </label>
-                    <input type="text" name="title" id="profit-edit-title">
-                </div>
-                <div>
-                    <h2>Contact</h2>
-                    No registered services, you can add some on the <a href="#">settings</a> page.
-                </div>
-                <div>
-                    <h2>Biography</h2>
-                    <textarea name="biography" id="profile-edit-biography" cols="30"
-                        rows="10">MSCS Student of NEU.</textarea>
-                </div>
-                <div>
-                    <h2>Links</h2>
-                    <ul>
-                        <li id="external-link"><a
-                                href="https://github.com/Shawnsuun">Github</a> Links to an
-                            external site.
-                        </li>
-                    </ul>
-                </div>
-                <table border="0" id="links-table">
-                    <thead>
-                        <tr>
-                            <th>
-                                Title
-                            </th>
-                            <th></th>
-                            <th>
-                                URL
-                            </th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="auto-width"><input type="text" name="link-title"
-                                    id="profile-edit-link-title" value="Github">
-                            </td>
-                            <td>&rarr;</td>
-                            <td class="auto-width"><input type="text" name="link-url" id="profile-edit-link-url"
-                                    value="https://github.com/Shawnsuun/"></td>
-                            <td><a href="#">Remove</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div id="profile-edit-link-buttons">
-                    <button type="button">Add another link</button>
-                    <br>
-                    <button type="button">Cancel</button>
-                    <button>Save Profile</button>
-                    <br>
-                    <button type="button">Edit Profile</button>
-                    <button>Cancel Editing</button>
-                </div>
-            </form>
-        </td>
-        
+                        <label for="profile-edit-title">Title: </label>
+                        <input type="text" class="form-control profile-input" name="title" id="profile-edit-title">
+                    </div>
+                    <div class="profile-section">
+                        <h2>Contact</h2>
+                        <p>No registered services, you can add some on the <a href="#">settings</a> page.</p>
+                    </div>
+                    <div class="profile-section">
+                        <h2>Biography</h2>
+                        <textarea class="form-control profile-textarea" name="biography" id="profile-edit-biography" cols="30" rows="10" style="display:block;">MSCS Student of NEU.</textarea>
+                    </div>
+
+                    <div class="profile-section">
+                        <div id="links-section">
+                            <!-- Headings -->
+                            <div class="row mb-2">
+                                <div class="col-5"><strong>Title</strong></div>
+                                <div class="col-1"></div>
+                                <div class="col-5"><strong>URL</strong></div>
+                                <div class="col-1"></div>
+                            </div>
+                        
+                            <!-- Content -->
+                            <div class="row">
+                                <div class="col-5">
+                                    <input type="text" class="form-control" name="link-title" id="profile-edit-link-title" value="Github">
+                                </div>
+                                <div class="col-1 d-flex align-items-center justify-content-center">&rarr;</div>
+                                <div class="col-5">
+                                    <input type="text" class="form-control" name="link-url" id="profile-edit-link-url" value="https://github.com/Shawnsuun/">
+                                </div>
+                                <div class="col-1 d-flex align-items-center justify-content-center">
+                                    <a href="#"><i class="fas fa-times" style="color: red;"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-link-add">Add another link</button><br>
+                    <div class="profile-buttons float-end">
+                        <button type="button" class="btn btn-outline-secondary"><i class="fas fa-pencil-alt"></i> Edit Profile</button>
+                        <button class="btn btn-danger"><i class="fas fa-save"></i> Save Profile</button>
+                        <button type="button" class="btn btn-outline-secondary" onclick="location.href='./index.html'"><i class="fas fa-pencil-alt"></i> Cancel Editing</button>
+                    </div>
+                </form>
+            </td>
+        </tr>
     </table>
 </body>
+
 </html>

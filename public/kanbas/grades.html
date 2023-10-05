@@ -1,124 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grades</title>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <table style="width:100%">
-        <!-- Column 1 -->
-        <td style="width:15%; vertical-align:top;">
-            <ul>
-                <li><a href="./profile/index.html">Account</a></li>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="./home.html">Courses</a></li>
-                <li><a href="#">Calendar</a></li>
-                <li><a href="#">Inbox</a></li>
-                <li><a href="#">History</a></li>
-                <li><a href="#">Studio</a></li>
-                <li><a href="#">Commons</a></li>
-                <li><a href="#">Help</a></li>
-            </ul>
-        </td>
-
-        <!-- Column 2 -->
-        <td style="width:15%; vertical-align:top;">
-            <ul>
-                <li><a href="./home.html">Home</a></li>
-                <li><a href="#">Modules</a></li>
-                <li><a href="#">Piazza</a></li>
-                <li><a href="#">Zoom</a></li>
-                <li><a href="#">Meetings</a></li>
-                <li><a href="./assignments/index.html">Assignments</a></li>
-                <li><a href="#">Quizzes</a></li>
-                <li><a href="./grades.html">Grades</a></li>
-                <li><a href="#">People</a></li>
-                <li><a href="#">Panopto</a></li>
-                <li><a href="#">Video</a></li>
-                <li><a href="#">Discussions</a></li>
-                <li><a href="#">Announcements</a></li>
-                <li><a href="#">Pages</a></li>
-                <li><a href="#">Files</a></li>
-                <li><a href="#">Rubrics</a></li>
-                <li><a href="#">Outcomes</a></li>
-                <li><a href="#">Collaborations</a></li>
-                <li><a href="#">Syllabus</a></li>
-                <li><a href="./settings/courseDetails.html">Settings</a></li>
-            </ul>
-        </td>
-
-        <!-- Column 3 -->
-        <td style="width:70%; vertical-align:top;">
-            <div>
-                <select>
-                    <option value="GRADEBOOK">Gradebook</option>
-                    <option value="OTHERS">Others</option>
-                </select>
-                <button>Import</button>
-                <select>
-                    <option value="EXPORT" selected>Export</option>
-                    <option value="EXPORT-ALL">Export All</option>
-                </select>
-                <button>Configure</button>
-            </div>
-
-            <div>
-                <h2>Student Names</h2>
-                <input type="text" name="search-student-name" id="search-student-name"
-                    placeholder="Search Students">
-                <h2>Assignment Names</h2>
-                <input type="text" name="search-assignment-name" id="search-assignment-name"
-                    placeholder="Search Assignments">
-            </div>
-            <br>
-            <div>
-                <button>Apply Filters</button>
-            </div>
-            </br>
-
-            <table border="1" width="100%">
-                <thead>
-                    <tr>
-                        <th>
-                            Student Name
-                        </th>
-                        <th>
-                            A1 SETUP Out of 100
-                        </th>
-                        <th>
-                            A2 HTML Out of 100
-                        </th>
-                        <th>
-                            A3 CSS Out of 100
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Alice Wonderland</td>
-                        <td>98</td>
-                        <td>87</td>
-                        <td>85</td>
-                    </tr>
-                    <tr>
-                        <td >Princess Leia</td>
-                        <td>99</td>
-                        <td>81</td>
-                        <td>84</td>
-                    </tr>
-                    <tr>
-                        <td>Luke Skywalker</td>
-                        <td><input type="number" name="student-grade" id="" value="92" max="100" min="0"
-                                step="1">
-                        </td>
-                        <td>94</td>
-                        <td>98</td>
-                    </tr>
-                </tbody>
-            </table>
-        </td>
-
+    <!-- Sidebar Table (Column 1) -->
+    <table style="width:80px; float: left;">
+        <tr>
+            <td style="vertical-align:top;">
+                <ul class="sidebar">
+                    <li><img src="../images/neu.jpg" alt="NEU Image" class="neu-image"></li>
+                    <li><a href="./profile/index.html"><i class="fas fa-user account-icon"></i> Account</a></li>
+                    <li><a href="./dashboard/index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="./home.html" class="active"><i class="fas fa-book-open"></i> Courses</a></li>
+                    <li><a href="#"><i class="fas fa-calendar-alt"></i> Calendar</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> Inbox</a></li>
+                    <li><a href="#"><i class="fas fa-history"></i> History</a></li>
+                    <li><a href="#"><i class="fas fa-tv"></i> Studio</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Commons</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
+                </ul>
+            </td>
+        </tr>
     </table>
+
+    <!-- Content Table -->
+    <table style="width:100% - 80px;">
+        <thead class="profile-header">
+            <tr>
+                <td colspan="3">
+                    <ol class="breadcrumb">
+                        <li><i class="fas fa-bars" style="color: red;"></i></li>
+                        <li class="breadcrumb-item">CS4550.12631.202410</li>
+                        <li class="breadcrumb-item active" aria-current="page">Home</li>
+                    </ol>
+
+                    <hr>
+                </td>
+            </tr>
+        </thead>
+        <tr>
+            <!-- Column 2 -->
+            <td class="side-menu" style="width:10%; vertical-align:top;">
+                <ul class="side-menu">
+                    <li><a href="./home.html">Home</a></li>
+                    <li><a href="#" >Modules</a></li>
+                    <li><a href="#">Piazza</a></li>
+                    <li><a href="#">Zoom</a></li>
+                    <li><a href="#">Meetings</a></li>
+                    <li><a href="./assignments/index.html">Assignments</a></li>
+                    <li><a href="#">Quizzes</a></li>
+                    <li><a href="./grades.html" class="profile-active">Grades</a></li>
+                    <li><a href="#">People</a></li>
+                    <li><a href="#">Panopto</a></li>
+                    <li><a href="#">Video</a></li>
+                    <li><a href="#">Discussions</a></li>
+                    <li><a href="#">Announcements</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li><a href="#">Files</a></li>
+                    <li><a href="#">Rubrics</a></li>
+                    <li><a href="#">Outcomes</a></li>
+                    <li><a href="#">Collaborations</a></li>
+                    <li><a href="#">Syllabus</a></li>
+                    <li><a href="./settings/courseDetails.html">Settings</a></li>
+                </ul>
+            </td>
+
+            <!-- Column 3 -->
+            <td style="width:40%; vertical-align:top;">
+                <div class="accordion" id="moduleAccordion">
+
+                    <div class="container-fluid">
+                        <!-- Main Content (Column 3) -->
+                        <div class="col-lg-9">
+                            <!-- Action Buttons -->
+                            <div class="d-flex mb-3">
+                                <select class="form-select mr-2" style="width: auto;">
+                                    <option value="GRADEBOOK" selected>Gradebook</option>
+                                    <option value="OTHERS">Others</option>
+                                </select>
+                                <button class="btn btn-primary mr-2">
+                                    <i class="fas fa-file-import"></i> Import
+                                </button>
+                                <div class="btn-group mr-2">
+                                    <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+                                        <i class="fas fa-file-export"></i> Export
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Export</a>
+                                        <a class="dropdown-item" href="#">Export All</a>
+                                    </div>
+                                </div>
+                                <button class="btn btn-warning">
+                                    <i class="fas fa-cogs"></i> Configure
+                                </button>
+                            </div>
+    
+                            <!-- Search Fields -->
+                            <div class="mb-4">
+                                <h2>Student Names</h2>
+                                <input type="text" name="search-student-name" id="search-student-name"
+                                    placeholder="Search Students" class="form-control mb-3">
+    
+                                <h2>Assignment Names</h2>
+                                <input type="text" name="search-assignment-name" id="search-assignment-name"
+                                    placeholder="Search Assignments" class="form-control mb-3">
+    
+                                <button class="btn btn-secondary mt-2">Apply Filters</button>
+                            </div>
+    
+                            <!-- Grade Table -->
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Student Name</th>
+                                        <th>A1 SETUP Out of 100</th>
+                                        <th>A2 HTML Out of 100</th>
+                                        <th>A3 CSS Out of 100</th>
+                                        <th>A4 JS Out of 100</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Alice Wonderland</td>
+                                        <td>98</td>
+                                        <td>87</td>
+                                        <td>85</td>
+                                        <td>85</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Princess Leia</td>
+                                        <td>99</td>
+                                        <td>81</td>
+                                        <td>84</td>
+                                        <td>84</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Luke Skywalker</td>
+                                        <td><input type="number" name="student-grade" class="form-control" value="92"
+                                                max="100" min="0" step="1"></td>
+                                        <td>94</td>
+                                        <td>98</td>
+                                        <td>84</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
+
 </html>
