@@ -407,3 +407,18 @@ a:hover {
 .custom-list-group i.fa-ellipsis-v {
     margin-left: 1em;
 }
+
+
+.side-section ul {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* This creates 2 columns */
+    margin-top: 5px; /* Added spacing at the top */
+    margin-right: 10px; /* Added spacing at the top */
+    list-style-type: none;
+}
+
+.card-style {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
