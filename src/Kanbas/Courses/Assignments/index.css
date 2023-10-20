@@ -68,7 +68,6 @@
     padding: 5px; /* Optional padding to the select for better appearance */
 }
 
-/* If you want to add space between the buttons vertically as well, you can use the following */
 .actions .btn,
 .actions select {
     margin: 5px 10px;  /* 5px top and bottom, 10px left and right */
