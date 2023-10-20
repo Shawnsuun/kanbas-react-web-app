@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import db from "../../../Database";
+import './index.css';
 
 function AssignmentEditor() {
   const { assignmentId } = useParams();
@@ -18,6 +19,7 @@ function AssignmentEditor() {
       <h2>Assignment Name</h2>
       <input value={assignment.title}
              className="form-control mb-2" />
+             <hr/ >
       <Link to={`/Kanbas/Courses/${courseId}/Assignments`}
             className="btn btn-danger">
         Cancel
@@ -25,7 +27,9 @@ function AssignmentEditor() {
       <button onClick={handleSave} className="btn btn-success me-2">
         Save
       </button>
+      <hr/ >
     </div>
+    
   );
 }
 

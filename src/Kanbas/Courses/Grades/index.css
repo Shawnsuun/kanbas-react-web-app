@@ -1,0 +1,68 @@
+/* Styles for the select, buttons and button group in the Grades section */
+.d-flex.mb-3 > .form-select,
+.d-flex.mb-3 > .btn,
+.d-flex.mb-3 > .btn-group {
+    margin-right: 10px;
+}
+
+/* Styles for the SearchBar and Apply Filters section */
+.search-filter-section {
+    display: flex;
+    align-items: left;
+}
+
+.search-filter-section .btn-secondary.mt-e {
+    margin-left: 10px;
+    height: 40px;
+}
+
+/* Styles for SearchBar */
+.search-bar-container {
+    margin-bottom: 4px;
+}
+
+.search-bar-container .form-control {
+    margin-bottom: 3px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+.table th, .table td {
+    border: 1px solid #d1d1d1;
+    padding: 8px 15px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f7f7f7;
+    font-weight: 500;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.table tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+.table th {
+    position: relative;
+    white-space: nowrap;
+}
+
+.table th::after {
+    content: 'Out of 100';
+    display: block;
+    font-size: 0.9em;
+    font-weight: normal;
+    color: #777;
+}

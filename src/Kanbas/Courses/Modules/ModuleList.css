@@ -1,0 +1,75 @@
+.list-group {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+#modules .list-group-item {
+    display: flex;
+    flex-direction: column; /* This will make the contents inside list-group-item stack vertically */
+    justify-content: space-between;
+    align-items: start; /* Align items to the start of the container */
+    border: 1px solid #d1d1d1;
+    padding: 10px 20px;
+    margin: 25px 0;
+    
+    position: relative;
+    background-color: #f7f7f7;
+}
+
+.list-group-item h3 {
+    font-size: 16px;
+    margin: 0;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.list-group-item h3::before {
+    content: '▶'; /* Arrow icon placeholder, replace with actual icon */
+    margin-right: 8px;
+    font-size: 12px;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.list-group-item .icons {
+    display: flex;
+    align-items: center;
+}
+
+.icons .icon {
+    margin-left: 10px;
+}
+
+.icons .check-icon::before {
+    content: '✔'; /* Check mark icon placeholder */
+}
+
+.icons .plus-icon::before {
+    content: '+'; /* Plus icon placeholder */
+}
+
+.icons .dots-icon::before {
+    content: '...'; /* Three-dots icon placeholder */
+}
+
+/* Add spacing between each action element */
+.actions .btn,
+.actions select {
+    margin-right: 10px;  /* Add space to the right of each button and select */
+}
+
+.actions select {
+    padding: 5px; /* Optional padding to the select for better appearance */
+}
+
+.actions .btn,
+.actions select {
+    margin: 5px 10px;  /* 5px top and bottom, 10px left and right */
+}
