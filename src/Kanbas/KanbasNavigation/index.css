@@ -1,0 +1,39 @@
+/* General styles for the Kanbas Navigation */
+.wd-kanbas-navigation {
+    border-radius: 0;
+    background: black;
+    width: 90px !important;
+    min-height: max(100vh, 100%);
+}
+
+/* Navigation item styles */
+.wd-kanbas-navigation .list-group-item {
+    background: black;
+    padding: 10px;
+    margin-block: 5px;
+    border: 0;
+    max-width: 100%;
+    font-size: 0.9em;
+    align-items: center;
+    color: white;
+}
+
+/* Modifiers for the navigation items */
+.wd-kanbas-navigation .list-group-item.active {
+    margin-top: 5px;
+    background: white;
+    color: red;
+}
+
+.wd-kanbas-navigation .wd-icon {
+    font-size: 2em;
+    color: red;
+}
+
+/* NEU Logo styles */
+.wd-kanbas-navigation .neu-icon {
+    padding: 0px;
+    margin: 0px;
+    width: 90px;
+    height: 90px;
+}
