@@ -1,58 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import db from "../../Database";
-import './ModuleList.css';
-
+import { useSelector, useDispatch } from "react-redux";
+import {
+  addModule,
+  deleteModule,
+  updateModule,
+  setModule,
+} from "./modulesReducer";
 function ModuleList() {
   const { courseId } = useParams();
-  const modules = db.modules;
-
+  const modules = useSelector((state) => state.modulesReducer.modules);
+  const module = useSelector((state) => state.modulesReducer.module);
+  const dispatch = useDispatch();
   return (
-
-    <>
-      <thead class="profile-header">
-        <tr>
-          <td colspan="3">
-
-            <div class="actions">
-              <button class="btn btn-secondary">Collapse All</button>
-              <button class="btn btn-secondary">View Progress</button>
-              <select>
-                <option value="publish-all" selected>Publish All</option>
-                <option value="publish-current">Publish Current</option>
-              </select>
-              <button class="btn btn-secondary">Module</button>
-            </div>
-            <hr />
-          </td>
-        </tr>
-      </thead>
-
-
-      <ul className="list-group">
-        {
-          modules
-            .filter((module) => module.course === courseId)
-            .map((module, index) => (
-              <li key={index} className="list-group-item" id="modules">
-                <div className="content-wrapper">
-                  <h3>{module.name}</h3>
-                  <div className="icons">
-                    <span className="icon check-icon"></span>
-                    <span className="icon plus-icon"></span>
-                    <span className="icon dots-icon"></span>
-                  </div>
-                </div>
-                <p>{module.description}</p>
-              </li>
-            ))
-        }
-      </ul></>
+    <ul className="list-group">
+      <li className="list-group-item">
+        <button
+          onClick={() => dispatch(addModule({ ...module, course: courseId }))}>
+          Add
+        </button>
+        <button
+          onClick={() => dispatch(updateModule(module))}>
+          Update
+        </button>
+        <input
+          value={module.name}
+          onChange={(e) =>
+            dispatch(setModule({ ...module, name: e.target.value }))
+          }/>
+        <textarea
+          value={module.description}
+          onChange={(e) =>
+            dispatch(setModule({ ...module, description: e.target.value }))
+          }/>
+      </li>
+      {modules
+        .filter((module) => module.course === courseId)
+        .map((module, index) => (
+          <li key={index} className="list-group-item">
+            <button
+              onClick={() => dispatch(setModule(module))}>
+              Edit
+            </button>
+            <button
+              onClick={() => dispatch(deleteModule(module._id))}>
+              Delete
+            </button>
+            <h3>{module.name}</h3>
+            <p>{module.description}</p>
+          </li>
+        ))}
+    </ul>
   );
 }
-
 export default ModuleList;
-
-
-
-
