@@ -1,52 +1,124 @@
-import React from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { deleteAssignment } from "./assignmentsReducer";
-import './index.css';
+import React, { useEffect } from "react";
+import { useParams, Navigate } from "react-router-dom";
 import db from "../../Database";
+import { useDispatch, useSelector } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaBook, FaEllipsisVertical, FaPlus } from "react-icons/fa6";
+import { faGripVertical } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+import { deleteAssignment, setAssignment } from "./assignmentsReducer";
+import "./index.css";
 
 function Assignments() {
   const { courseId } = useParams();
-  const navigate = useNavigate();
+
+  const assignments = useSelector(
+    (state) => state.assignmentsReducer.assignments,
+  );
   const dispatch = useDispatch();
-  const assignments = db.assignments;
-  const courseAssignments = assignments.filter(
-    (assignment) => assignment.course === courseId);
-
-  const handleNewAssignment = () => {
-    navigate(`/Kanbas/Courses/${courseId}/Assignments/new`);
-  };
-
-  const handleDeleteAssignment = (assignmentId) => {
-    const isConfirmed = window.confirm("Are you sure you want to remove this assignment?");
-    if (isConfirmed) {
-      dispatch(deleteAssignment(assignmentId));
-    }
-  };
 
   return (
     <div>
-      <h2>Assignments for course {courseId}</h2>
-      <button onClick={handleNewAssignment} className="btn btn-primary">
-        + Assignment
-      </button>
-      <div className="list-group" id="assignments">
-        {courseAssignments.map((assignment) => (
-          <div key={assignment._id} className="list-group-item">
-            <div className="assignment-title">
-              <Link to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}>
-                {assignment.title}
-              </Link>
-            </div>
-            <button 
-              onClick={() => handleDeleteAssignment(assignment._id)} 
-              className="btn btn-danger btn-sm">
-              Delete
+      <div className="flex-grow-1">
+        <div className="d-flex flex-row">
+          <div className="search flex-grow-1">
+            <input
+              type="text"
+              className="form-control w-25"
+              placeholder="Search for an Assignment"
+            />
+          </div>
+          <div className="d-flex float-end main-content-control">
+            <div className="flex-grow-1"></div>
+            <button className="btn">
+              <FaPlus />
+              Group
+            </button>
+            <button
+              onClick={() =>
+                dispatch(
+                  setAssignment({
+                    title: "",
+                    description: "",
+                    points: "",
+                    dueDate: "",
+                    availableFrom: "",
+                    availableUntil: "",
+                  }),
+                  window.location.assign(
+                    `/#/Kanbas/Courses/${courseId}/Assignments/New`,
+                  ),
+                )
+              }
+              className="btn btn-danger"
+            >
+              <FaPlus />
+              Assignment
+            </button>
+            <button className="btn">
+              <FaEllipsisVertical />
             </button>
           </div>
-        ))}
+        </div>
+
+        <hr />
+        <ul className="list-group">
+          <li className="list-group-item list-group-item-secondary">
+            <FontAwesomeIcon icon={faGripVertical} />
+            <span>
+              <strong>Assignments</strong>
+            </span>
+            <div className="float-end">
+              <button className="btn rounded-pill">20 % of Total</button>
+              <FaPlus />
+              <FaEllipsisVertical />
+            </div>
+          </li>
+          <ul className="list-group">
+            {assignments
+              .filter((module) => module.course === courseId)
+              .map((assignment) => (
+                <li className="list-group-item" key={assignment.id}>
+                  <div className="flex-container">
+                    <div className="float-end">
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => {
+                          if (
+                            window.confirm(
+                              "Delete this assignment?",
+                            )
+                          ) {
+                            dispatch(deleteAssignment(assignment.id));
+                          }
+                        }}
+                      >
+                        Delete
+                      </button>
+                    </div>
+                    <FontAwesomeIcon icon={faGripVertical} />
+                    <FaBook />
+                    <span>
+                      <strong>
+                        <Link
+                          to={`/Kanbas/Courses/${courseId}/Assignments/${assignment.id}`}
+                          style={{ color: "black" }}
+                        >
+                          <strong>{assignment.title}</strong>
+                        </Link>
+                      </strong>
+                    </span>
+                    <div>
+                      <span>{assignment?.description}</span>
+                    </div>
+                  </div>
+                </li>
+              ))}
+          </ul>
+        </ul>
       </div>
     </div>
   );
 }
+
 export default Assignments;
