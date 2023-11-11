@@ -1,24 +1,49 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
-import db from "../../Database";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteAssignment } from "./assignmentsReducer";
 import './index.css';
+import db from "../../Database";
 
 function Assignments() {
   const { courseId } = useParams();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const assignments = db.assignments;
   const courseAssignments = assignments.filter(
     (assignment) => assignment.course === courseId);
+
+  const handleNewAssignment = () => {
+    navigate(`/Kanbas/Courses/${courseId}/Assignments/new`);
+  };
+
+  const handleDeleteAssignment = (assignmentId) => {
+    const isConfirmed = window.confirm("Are you sure you want to remove this assignment?");
+    if (isConfirmed) {
+      dispatch(deleteAssignment(assignmentId));
+    }
+  };
+
   return (
-    <div >
+    <div>
       <h2>Assignments for course {courseId}</h2>
-      <div className="list-group"  id="assignments">
+      <button onClick={handleNewAssignment} className="btn btn-primary">
+        + Assignment
+      </button>
+      <div className="list-group" id="assignments">
         {courseAssignments.map((assignment) => (
-          <Link
-            key={assignment._id}
-            to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
-            className="list-group-item">
-            {assignment.title}
-          </Link>
+          <div key={assignment._id} className="list-group-item">
+            <div className="assignment-title">
+              <Link to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}>
+                {assignment.title}
+              </Link>
+            </div>
+            <button 
+              onClick={() => handleDeleteAssignment(assignment._id)} 
+              className="btn btn-danger btn-sm">
+              Delete
+            </button>
+          </div>
         ))}
       </div>
     </div>

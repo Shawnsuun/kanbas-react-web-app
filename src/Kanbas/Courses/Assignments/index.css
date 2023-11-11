@@ -72,3 +72,15 @@
 .actions select {
     margin: 5px 10px;  /* 5px top and bottom, 10px left and right */
 }
+
+.assignment-title {
+    flex-grow: 1;
+    text-align: left;
+  }
+  
+  /* Ensure your .list-group-item is styled as a flex container if not already */
+  .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
