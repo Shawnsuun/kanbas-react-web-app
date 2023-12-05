@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { BiUserCircle, BiBook, BiCalendar } from "react-icons/bi";
+import { BiUserCircle, BiBook, BiCalendar, BiUserPlus, BiLogInCircle} from "react-icons/bi";
 import { TfiDashboard } from "react-icons/tfi";
 import { SlEnvolopeLetter, SlClock } from "react-icons/sl";
 import { TbPresentationAnalytics } from "react-icons/tb";
@@ -45,6 +45,8 @@ function NavLink({ linkData, isActive }) {
 function getLinksData() {
     return [
         { name: "Account", icon: <BiUserCircle className="wd-icon" /> },
+        { name: "Signin", icon: <BiLogInCircle className="wd-icon" /> },
+        { name: "Signup", icon: <BiUserPlus className="wd-icon" /> },
         { name: "Dashboard", icon: <TfiDashboard className="wd-icon" /> },
         { name: "Courses", icon: <BiBook className="wd-icon" /> },
         { name: "Calendar", icon: <BiCalendar className="wd-icon" /> },

@@ -1,4 +1,8 @@
 import KanbasNavigation from "./KanbasNavigation";
+import Signin from "./Users/signin";
+import Signup from "./Users/signup";
+import Account from "./Users/account";
+import UserTable from "./Users/table";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import Courses from "./Courses";
@@ -65,7 +69,11 @@ function Kanbas() {
       <div>
         <Routes>
           <Route path="/" element={<Navigate to="Dashboard" />} />
-          <Route path="Account" element={<h1>Account</h1>} />
+          <Route path="Signin" element={<Signin />} />
+          <Route path="Signup" element={<Signup />} />
+          <Route path="Account" element={<Account />} />
+          <Route path="Account/:id" element={<Account />} />
+          <Route path="/admin/users" element={<UserTable />} />
           <Route path="Dashboard" element={
             <Dashboard
               courses={courses}
